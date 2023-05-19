@@ -1,0 +1,11 @@
+.home {
+  height: 85vh;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
