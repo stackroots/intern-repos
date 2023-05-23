@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import Home from "./Home";
 import axios from "axios";
+import AddStudent from "./AddStudent";
+import AboutUs from "./AboutUs";
 
 function App() {
   const [students, setStudents] = useState([]);
-
-  // const handleIncrement = () => {
-  //   setCount(count + 1);
-  // };
-
-  // const handledecrement = () => {
-  //   setCount(count - 1);
-  // };
 
   const getStudents = async () => {
     try {
@@ -31,14 +26,17 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Header />
-      {/* <h1>Count is {count}</h1> */}
-      {/* <button onClick={handleIncrement}>Increment</button> */}
-      {/* <button onClick={handledecrement}>Decrement</button> */}
-      <Home students={students} />
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home students={students} />} />
+          <Route path="/add" element={<AddStudent />} />
+          <Route path="/about" element={<AboutUs />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

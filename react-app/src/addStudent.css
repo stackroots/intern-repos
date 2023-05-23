@@ -1,0 +1,16 @@
+.addStudent{
+  min-height: 100vh;
+
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.addStudent h1{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+label{
+  display: block;
+  margin-bottom: 30px;
+}
